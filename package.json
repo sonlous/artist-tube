@@ -1,0 +1,27 @@
+{
+  "name": "artist-tube",
+  "version": "1.0.0",
+  "description": "The Video Player for Artist",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonlous/artist-tube.git"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "author": "WooJin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonlous/artist-tube/issues"
+  },
+  "homepage": "https://github.com/sonlous/artist-tube#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.20"
+  }
+}
