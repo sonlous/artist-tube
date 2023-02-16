@@ -1,22 +1,20 @@
 import express from "express";
+import morgan from "morgan";
+import globalRouter from './routers/globalRouter';
+import userRouter from './routers/userRouter';
+import videoRouter from './routers/videoRouter';
 
 const PORT = 4000;
 
 const app = express();
-
-const logger = (req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
-    next();
-};
-
-const handleHome = (req, res) => {
-    return res.send("<h1>WooJin</h1>");
-};
-
+const logger = morgan("dev");
 app.use(logger);
-app.get("/",logger ,handleHome);
 
+app.use("/", globalRouter);
+app.use("/users", userRouter)
+app.use("/videos", videoRouter);
 
-const handleListening = () => console.log(`Server lisening on Port http://localhost:${PORT} 😃`);
+const handleListening = () =>
+  console.log(`✅ Server listenting on port http://localhost:${PORT} 🚀`);
 
-app.listen(PORT, handleListening);
+  app.listen(PORT, handleListening);
